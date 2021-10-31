@@ -21,13 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'django-insecure-!nvrr)s2r3bg8c8xz@63r@9)=p+(3c@ma9ct4qo5b!dti%j3tr'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['https://ncertquizapi.herokuapp.com']
-ALLOWED_HOSTS = ['ncertquizapi.herokuapp.com']
+# ALLOWED_HOSTS = ['ncertquizapi.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMidddleware',
+    # 'whitenoise.middleware.WhiteNoiseMidddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,14 +81,24 @@ WSGI_APPLICATION = 'WebApis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ['Database'],
+#         'USER': os.environ['User'],
+#         'PASSWORD': os.environ['Password'],
+#         'HOST': os.environ['Host'],
+#         'PORT': os.environ['Port'],
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['Database'],
-        'USER': os.environ['User'],
-        'PASSWORD': os.environ['Password'],
-        'HOST': os.environ['Host'],
-        'PORT': os.environ['Port'],
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Achyut2002',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
