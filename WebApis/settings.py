@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'WebApis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Achyut2002',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ['Database'],
+        'USER': os.environ['User'],
+        'PASSWORD': os.environ['Password'],
+        'HOST': os.environ['Host'],
+        'PORT': os.environ['Port'],
     }
 }
 
